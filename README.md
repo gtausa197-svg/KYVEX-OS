@@ -6,6 +6,7 @@
 
 <h1 id="kyvex-os">KYVEX OS</h1>
 Site: https://ashen-six-86.vercel.app
+
 Patreon: https://www.patreon.com/AnimaStage/posts/support-kyvex-os-175547943
 <h3>The Aurora desktop. Reimagined for Linux.</h3>
 
