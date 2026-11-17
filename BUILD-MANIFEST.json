@@ -1,0 +1,103 @@
+{
+  "name": "KYVEX OS",
+  "version": "0.8.1 Alpha",
+  "base": "Arch Linux x86_64",
+  "upstream_duodesk": "50125ca0c4f73ab3253e739dd8a6ec9cf1a8444b",
+  "calamares_version": "3.4.3",
+  "calamares_commit": "af2eaf829b7c60ae5b69b9fe68f9158dc98d3331",
+  "installed_kernels": [
+    "linux",
+    "linux-lts",
+    "linux-zen"
+  ],
+  "repositories": [
+    "Arch core/extra/multilib",
+    "AUR",
+    "Ryoku stable",
+    "Flathub",
+    "Kali official image repositories via Distrobox",
+    "Parrot official image repositories via Distrobox"
+  ],
+  "performance": {
+    "mode": "temporary, explicit activation, reversible",
+    "priority": "nice -5, selected same-user application threads and descendants",
+    "cpu": "power-profiles-daemon performance hold; supported cpufreq fallback",
+    "gpu": "AMD high; NVIDIA NVML PowerMizer; supported Intel frequency floor",
+    "memory": "zstd zram: half RAM capped at 4 GiB",
+    "tools": [
+      "btop",
+      "nvtop",
+      "lm_sensors",
+      "cpupower",
+      "powertop",
+      "FFmpeg A/B benchmark"
+    ],
+    "time_limit": null
+  },
+  "checksums": "The final ISO checksum is supplied separately with the release.",
+  "nvidia": {
+    "version": "620.70.06",
+    "flavor": "open DKMS",
+    "prebuilt_for": [
+      "7.3.4-arch1-1",
+      "6.18.63-2-lts",
+      "7.3.4-zen2-1-zen"
+    ],
+    "physical_gpu_tested": false
+  },
+  "live_detection": "mounted Archiso overlay + read-only branded squashfs + actual loop backing file",
+  "runtimes": {
+    "windows": "PortProton 1.7.5 with bundled Proton LG and Wine LG runners",
+    "android_backend": "native only",
+    "rift": {
+      "version": "0.3.0",
+      "core": "Rust 2024",
+      "studio": "C++20 / Qt6 / QML",
+      "cpu": "Dynarmic 6.7.0",
+      "native_jit_commit": "a41c380246d3d9f9874f0f792d234dc0cc17c180",
+      "api_scope": "rift/README.md",
+      "full_android_compatible": false,
+      "corpus": "D:/apk, five user APKs, no redistribution",
+      "backend_fallback": false,
+      "native_profiles": {
+        "light": {
+          "guest_mib": 32,
+          "java_heap_mib": 4,
+          "jit_cache_mib": 8,
+          "address_space_mib": 192
+        },
+        "balanced": {
+          "guest_mib": 96,
+          "java_heap_mib": 16,
+          "jit_cache_mib": 16,
+          "address_space_mib": 768
+        },
+        "large": {
+          "guest_mib": 256,
+          "java_heap_mib": 64,
+          "jit_cache_mib": 32,
+          "address_space_mib": 3072
+        }
+      },
+      "waydroid_included": false,
+      "libndk_included": false,
+      "android_image_required": false,
+      "physical_gpu_tested": false,
+      "regex": "system PCRE2-16, tested Java Pattern/Matcher subset",
+      "android_identity_profile": 28,
+      "full_android_framework": false,
+      "native_jni_abi": "AAPCS32 Android softfp + AAPCS64, scalar word/long/float/double/register/stack",
+      "first_party_checks": {
+        "java": 31,
+        "native_abi": 4
+      }
+    }
+  },
+  "languages": {
+    "default": "en",
+    "uk": "included",
+    "pl": "partial, English fallback",
+    "de": "partial, English fallback"
+  },
+  "live_light": "dedicated GRUB entry, copytoram=n, lightweight Qt Studio welcome below 8 GiB"
+}

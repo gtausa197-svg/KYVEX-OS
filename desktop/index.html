@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>KYVEX OS — Центр керування</title>
+  <link rel="stylesheet" href="vendor/base.css">
+  <link rel="stylesheet" href="vendor/aurora.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hub.css">
+  <link rel="stylesheet" href="performance.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+  <aside id="sidebar">
+    <div class="brand"><img src="assets/kyvex.svg" alt=""><div>KYVEX<span>OPERATING SYSTEM</span></div></div>
+    <div class="section-label">ВАШ ПРОСТІР</div>
+    <nav id="nav" aria-label="Розділи"></nav>
+    <div class="side-bottom"><span class="live-dot"></span><div>Arch у серці.<br><span>Контроль у ваших руках.</span></div></div>
+    <div class="version">KYVEX OS <span>0.8.1 · AURORA</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="mini-mark">K</span><span id="breadcrumb">Робочий простір</span></div><div class="top-right"><span id="session-label">Локальна сесія</span><time id="clock"></time></div></header>
+    <div id="pages">
+      <section class="page" id="overview" aria-labelledby="overview-title">
+        <div class="eyebrow">ВАША СИСТЕМА. ВАШІ ПРАВИЛА.</div>
+        <div class="heading"><div><h1 id="overview-title">Готові до <span>більшого.</span></h1><p>Спокійний робочий простір для допитливого розуму.</p></div><div class="edition"><span class="live-dot"></span> AURORA EDITION</div></div>
+        <div class="hero panel"><div class="hero-copy"><span class="tag">KYVEX WORKSPACE</span><h2>Досліджуйте.<br>Розумійте. Захищайте.</h2><p>Інструменти кібербезпеки, відкритий код<br>і свобода Arch Linux в одному просторі.</p><button class="primary" data-page="arsenal">Відкрити арсенал <span>↗</span></button></div><div class="orb" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><img src="assets/kyvex.svg" alt=""><span class="orbit-label">BUILT TO EXPLORE</span></div><div class="hero-bottom"><span>LINUX / WAYLAND / PLASMA</span><span>01 — THE AURORA EXPERIENCE</span></div></div>
+        <div class="section-heading"><h2>Під рукою</h2><span>Ваш щоденний набір</span></div>
+        <div class="quick-grid" id="quick-apps"></div>
+        <div class="section-heading"><h2>Пульс системи</h2><span id="hostname">Зчитуємо дані…</span></div>
+        <div class="stats-grid"><article class="stat panel"><span>Оперативна пам’ять</span><strong id="memory">—</strong><small id="memory-total">Очікування системи</small></article><article class="stat panel"><span>Середнє навантаження · 1 хв</span><strong id="load">—</strong><small id="cores">—</small></article><article class="stat panel"><span>Фаєрвол · nftables</span><strong class="status-value" id="firewall">—</strong><small>Стан системної служби</small></article></div>
+      </section>
+      <section class="page" id="arsenal" hidden aria-labelledby="arsenal-title"><div class="eyebrow">TOOLKIT / 02</div><div class="heading"><div><h1 id="arsenal-title">Ваш <span>арсенал.</span></h1><p>Від мережевого аналізу до цифрової криміналістики.</p></div></div><div class="filters"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Знайти інструмент…" aria-label="Пошук інструментів"></label><div id="categories"></div></div><p class="quiet">Мережеві CLI-інструменти відкривають довідку. Досліджуйте системи, на аудит яких маєте дозвіл.</p><div class="tool-grid" id="tool-grid"></div><p id="no-tools" hidden>За цим запитом нічого не знайдено.</p></section>
+      <section class="page" id="security" hidden aria-labelledby="security-title"><div class="eyebrow">SECURITY / 03</div><div class="heading"><div><h1 id="security-title">Почнімо з <span>основ.</span></h1><p>Прозорий стан захисту без вигаданих рейтингів.</p></div></div><div class="panel security-intro"><span class="large-icon" data-icon="shield"></span><div><h2>Безпека — це процес.</h2><p>Вхідні з’єднання блокуються типовими правилами nftables; SSH вимкнений. Тут відображається поточний стан служб.</p></div></div><div class="panel rows"><div class="status-row"><div><h3>Мережевий фаєрвол</h3><p>Служба nftables; правила доступні в /etc/nftables.conf</p></div><span id="security-firewall" class="badge">Зчитування…</span></div><div class="status-row"><div><h3>Віддалений доступ SSH</h3><p>Автоматично не вмикається.</p></div><span id="security-ssh" class="badge">Зчитування…</span></div><div class="status-row"><div><h3>Журнал аудиту</h3><p>Служба auditd для системних подій.</p></div><span id="security-audit" class="badge">Зчитування…</span></div><div class="status-row"><div><h3>Модулі безпеки ядра</h3><p id="lsm">Зчитування…</p></div><span class="badge neutral">LSM</span></div></div><div class="two-grid"><button class="action-card panel" data-launch="journal"><span data-icon="activity"></span><h3>Переглянути події</h3><p>Відкрити системний журнал ↗</p></button><button class="action-card panel" data-launch="updates"><span data-icon="refresh"></span><h3>Оновити систему</h3><p>Перевірити підписані пакунки ↗</p></button></div><p class="quiet" id="live-warning" hidden>Live-сесія: користувач і пароль — kyvex. Root заблокований. Зміни без встановлення не зберігаються після перезавантаження.</p></section>
+      <section class="page" id="network" hidden aria-labelledby="network-title"><div class="eyebrow">CONNECTIONS / 04</div><div class="heading"><div><h1 id="network-title">Залишайтесь <span>на зв’язку.</span></h1><p>Локальні інтерфейси та адреси вашої системи.</p></div><button class="secondary" data-launch="settings">Налаштування мережі ↗</button></div><div class="panel" id="interfaces"><p>Зчитування інтерфейсів…</p></div><div class="panel info-card"><span data-icon="network"></span><h3>Працює і без хмари.</h3><p>Центр керування читає локальні дані. Телеметрії та віддаленого API в ньому немає.</p></div></section>
+      <section class="page" id="appearance" hidden aria-labelledby="appearance-title"><div class="eyebrow">PERSONALIZE / 05</div><div class="heading"><div><h1 id="appearance-title">Відчуйте <span>Aurora.</span></h1><p>Глибокі поверхні, спектральне світло та плавний рух.</p></div></div><div class="theme-preview panel"><img src="assets/wallpaper.svg" alt="Абстрактне сяйво KYVEX Aurora"><div><span class="tag">АКТИВНА ТЕМА</span><h2>Північне сяйво.</h2><p>Aurora / графіт · фіолетовий · м’ятний</p></div></div><div class="panel rows"><label class="status-row"><div><h3>Зменшити рух</h3><p>Вимкнути фонові ефекти та анімації KWin.</p></div><input class="switch" type="checkbox" id="reduced-motion" role="switch"></label><div class="status-row"><div><h3>Оформлення робочого столу</h3><p>Шрифти, масштаб, теми та поведінка вікон.</p></div><button class="secondary" data-launch="settings">Відкрити ↗</button></div></div><p class="quiet">Super — меню · Super + Enter — термінал · Super + E — файли · Alt + Shift — US / UA</p></section>
+      <section class="page" id="about" hidden aria-labelledby="about-title"><div class="eyebrow">ABOUT / 06</div><div class="heading"><div><h1 id="about-title">Знайомтесь. <span>KYVEX.</span></h1><p>Незалежний дистрибутив на базі Arch Linux.</p></div></div><div class="panel about-card"><img src="assets/kyvex.svg" alt="KYVEX"><h2>KYVEX OS <span>0.8.1 Alpha</span></h2><p>Linux, пакунки Arch, робочий стіл KDE Plasma / Wayland.<br>Візуальна основа: DuoDesk Aurora від 0xCodez,<br>на основі TwinDesk © 2026 inukaasith.</p><p>Ідея KYVEX OS та адаптація дизайну — <button class="text-button" data-launch="creator">gtausa197-svg ↗</button></p><p>Центр керування й оформлення: GPL-3.0.<br>Geist / Geist Mono: SIL Open Font License.</p><p class="quiet">Експериментальний випуск. Перевірка обладнання та інсталятора ще триває.<br>Документація і джерела: /usr/share/doc/kyvex та /usr/share/kyvex/source.</p><div class="about-meta"><span>Ядро</span><code id="kernel">—</code></div></div></section>
+    </div>
+    <footer><span>KYVEX <b>OS</b></span><span>ВІДКРИТИЙ КОД. ВІДКРИТІ МОЖЛИВОСТІ.</span><span id="data-status">Локальні дані</span></footer>
+  </main>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="hub-shell.js"></script>
+  <script src="performance-shell.js"></script>
+  <script src="bridge-shell.js"></script>
+  <script src="renderer.js"></script>
+  <script src="hub.js"></script>
+  <script src="performance.js"></script>
+  <script src="bridge.js"></script>
+  <script src="translations.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

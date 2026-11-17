@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Compatibility entry point for KYVEX's graphical Calamares installer."""
+import os,shutil,subprocess,sys
+sys.path.insert(0,'/usr/lib/kyvex')
+from live import probe
+
+def live_media_available():return probe()['installerAvailable']
+def main():
+    if sys.argv[1:]:
+        print('Open Calamares with kyvex-install or select Install KYVEX in Control Center.')
+        return 0 if sys.argv[1:]==['--help'] else 2
+    if not live_media_available():
+        message='Установник доступний лише з Live-носія KYVEX OS. Завантажте комп’ютер з USB-носія та відкрийте встановлення знову.'
+        print(message,file=sys.stderr)
+        if shutil.which('kdialog') and (os.environ.get('DISPLAY') or os.environ.get('WAYLAND_DISPLAY')):
+            subprocess.run(['/usr/bin/kdialog','--error',message],check=False)
+        return 1
+    if os.geteuid()==0:os.execv('/usr/lib/kyvex/kyvex-calamares',['kyvex-calamares'])
+    os.execv('/usr/bin/pkexec',['pkexec','/usr/lib/kyvex/kyvex-calamares'])
+if __name__=='__main__':sys.exit(main())

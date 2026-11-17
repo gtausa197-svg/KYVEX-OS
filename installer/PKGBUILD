@@ -1,0 +1,14 @@
+pkgname=calamares-kyvex
+pkgver=3.4.3
+pkgrel=1
+pkgdesc='Calamares universal graphical installer built for KYVEX OS'
+arch=('x86_64')
+url='https://calamares.io'
+license=('GPL-3.0-or-later' 'BSD-2-Clause' 'CC0-1.0')
+depends=('qt6-base' 'qt6-declarative' 'qt6-svg' 'qt6-wayland' 'yaml-cpp' 'kpmcore' 'kio' 'kiconthemes' 'kparts' 'boost-libs' 'python' 'python-yaml' 'libpwquality' 'parted' 'rsync' 'squashfs-tools' 'cryptsetup' 'polkit-qt6')
+options=('!debug')
+package() {
+  cp -a /build/calamares-pkg/. "$pkgdir/"
+  install -d "$pkgdir/usr/share/licenses/$pkgname"
+  cp -r /build/calamares/LICENSES/. "$pkgdir/usr/share/licenses/$pkgname/"
+}

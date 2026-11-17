@@ -1,0 +1,10 @@
+{
+  "name": "kyvex-control-center",
+  "productName": "KYVEX Control Center",
+  "version": "0.7.0",
+  "description": "KYVEX OS Aurora desktop control center, derived from DuoDesk",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "main": "main.cjs",
+  "scripts": {"test": "node --test ../tests/*.test.cjs", "start": "electron ."}
+}
